@@ -1,0 +1,176 @@
+.loginContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: radial-gradient(circle at top right, #1e293b, #0f172a);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  padding: 2rem 1.5rem;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  margin: auto 0;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.loginHeader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.logoBadge {
+  background: rgba(239, 68, 68, 0.1);
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.loginHeader h1 {
+  color: white;
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.025em;
+}
+
+.loginHeader p {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.errorBanner {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputWrapper label {
+  color: #cbd5e1;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-left: 0.25rem;
+}
+
+.inputIconGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 1rem;
+  color: #64748b;
+}
+
+.inputIconGroup input {
+  width: 100%;
+  padding: 0.875rem 1rem 0.875rem 3rem;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.inputIconGroup input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.signInButton {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all 0.2s;
+}
+
+.signInButton:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.signInButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loginFooter {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.loginFooter p {
+  color: #475569;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  .loginContainer {
+    padding: 1rem;
+  }
+
+  .loginCard {
+    padding: 2rem 1.25rem;
+  }
+
+  .loginHeader h1 {
+    font-size: 1.8rem;
+  }
+
+  .loginHeader {
+    margin-bottom: 1.5rem;
+  }
+
+  .loginForm {
+    gap: 1.1rem;
+  }
+}
