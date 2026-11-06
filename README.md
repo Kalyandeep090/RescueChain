@@ -147,6 +147,20 @@ Firebase Authentication and Cloud Firestore provide the application's backend se
 - Enhanced location tracking and geospatial filtering.
 - Notification mechanisms for critical incidents.
 - Additional monitoring and reporting capabilities.
+## 📸 Project Screenshots
+
+### 1. Volunteer Home
+![Volunteer Home](screenshots/home.png)
+
+### 2. Live Emergency Map
+![Live Map](screenshots/live-map.png)
+
+### 3. Response Management
+![Response Management](screenshots/Response-Management.png)
+
+### 4. Incident Analytics & Reports
+![Incident Reports](screenshots/reports.png)
+
 
 ## Repository
 
