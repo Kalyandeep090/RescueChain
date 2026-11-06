@@ -1,55 +1,153 @@
-# RescueChain - Full-Stack Emergency Coordination Platform
+# RescueChain – Real-Time Emergency Reporting and Response Coordination Platform
 
-RescueChain is a cloud-based real-time emergency coordination platform designed for crowd disaster management, specifically tailored for Indian mass gatherings.
+**Live Demo:** https://rescue-chain-blond.vercel.app/
 
-## Features
-- **Real-Time Map Dashboard**: Instant alerting using Indian geo-coordinates.
-- **Automated Severity Classification**: NLP-based heuristic classification of incident severity (Critical, High, Medium, Low).
-- **Role-Based Workflows**: Separate functionalities for Command Center Admin, Police, Medical, and Volunteers.
-- **Full-Stack Architecture**: Node.js/Express backend communicating with a React.js (Vite) frontend.
-- **Premium UI**: Clean, modern White + Red emergency response theme.
+## Overview
+
+RescueChain is a cloud-based emergency reporting and response coordination platform designed to support crowd disaster management during large public gatherings.
+
+The platform enables volunteers to report emergencies in real time, while administrators can monitor reported incidents, assess their severity, and manage their resolution through a centralized dashboard.
+
+## Key Features
+
+- **Real-Time Emergency Reporting:** Volunteers can submit emergency alerts with incident descriptions and location information.
+- **Interactive Map Dashboard:** Visualizes emergency incidents using geographical information.
+- **Automated Severity Classification:** Uses keyword-based rules to classify incidents into Critical, High, Medium, and Low severity levels.
+- **Role-Based Access Control:** Separate interfaces and permissions for Admin and Volunteer users.
+- **Real-Time Data Synchronization:** Firebase Cloud Firestore enables updates to be reflected across the application.
+- **Alert Management:** Administrators can monitor alerts and update their status from Active to In Progress and Resolved.
+- **Authentication:** Firebase Authentication handles user registration and login.
+
+## Technology Stack
+
+| Component | Technologies |
+|---|---|
+| Frontend | React.js, Vite |
+| Programming Language | JavaScript |
+| Styling | CSS |
+| Maps | Leaflet, React-Leaflet |
+| Backend Services | Firebase |
+| Authentication | Firebase Authentication |
+| Database | Cloud Firestore |
+| Deployment | Vercel |
+| Version Control | Git, GitHub |
+
+## Project Architecture
+
+The deployed application uses a React-based frontend integrated directly with Firebase services.
+
+- **React + Vite:** User interface and application logic.
+- **Firebase Authentication:** User authentication and account management.
+- **Cloud Firestore:** Stores user information and emergency alert records, with real-time data synchronization.
+- **Firestore Security Rules:** Enforces role-based access and controls database operations.
+
+The repository also contains a separate Express.js backend implementation using Firebase Admin SDK. It is not currently part of the deployed frontend's active request flow.
+
+## User Roles
+
+### Volunteer
+- Register and log in to the platform.
+- Report emergency incidents.
+- Provide incident descriptions and location information.
+- View reported alerts.
+
+### Administrator
+- Access the administrative dashboard.
+- Monitor reported emergency incidents.
+- Review incident severity.
+- Manage alert status.
+- Mark incidents as In Progress or Resolved.
+
+## Alert Severity Classification
+
+The platform uses keyword-based classification rules to determine incident severity.
+
+- **Critical:** Examples include fire, stampede, bomb and fatal incidents.
+- **High:** Examples include injuries, medical emergencies and collapses.
+- **Medium:** Examples include crowd-related issues, theft and lost-person reports.
+- **Low:** Other incidents that do not match the higher-severity rules.
 
 ## Project Structure
-- `/frontend` - React.js (Vite) application
-- `/backend` - Node.js + Express REST API
 
-## Setup Instructions
+```text
+RescueChain/
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── routes/
+│   ├── services/
+│   └── server.js
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── pages/
+│   │   └── services/
+│   ├── package.json
+│   └── vercel.json
+│
+├── .gitignore
+└── README.md
+```
 
-### 1. Backend Setup
-1. Open a terminal and navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the Node.js server:
-   ```bash
-   npm start
-   # Or for development: node server.js
-   ```
-   The backend will run on `http://localhost:5000`.
+## Running the Frontend Locally
 
-### 2. Frontend Setup
-1. Open a new terminal and navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the Vite development server:
-   ```bash
-   npm run dev
-   ```
-   The frontend will run on `http://localhost:5173`.
+### Prerequisites
+- Node.js and npm
+- Firebase project configuration
 
-### 3. Usage
-- Open `http://localhost:5173` in your browser.
-- Navigate to the **Live Map** to click and create a new incident. 
-- Ensure both the backend and frontend servers are running simultaneously so the frontend can `fetch` data from the backend's REST API.
+### Installation
 
-## Real-Time "Mock" Mode
-Currently, the application runs in a local mock-mode, utilizing an in-memory database on the backend and polling on the frontend to simulate real-time synchronization without requiring actual Firebase Service Account credentials.
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Kalyandeep090/RescueChain.git
+```
+
+2. Navigate to the frontend directory:
+
+```bash
+cd RescueChain/frontend
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Start the development server:
+
+```bash
+npm run dev
+```
+
+5. Open the local URL provided by Vite, usually:
+
+```text
+http://localhost:5173
+```
+
+Ensure the Firebase web configuration in `frontend/src/services/firebase.js` is configured for your Firebase project.
+
+## Deployment
+
+The frontend is deployed on Vercel.
+
+**Live Application:** https://rescue-chain-blond.vercel.app/
+
+Firebase Authentication and Cloud Firestore provide the application's backend services.
+
+## Future Enhancements
+
+- Integration with actual emergency response agencies.
+- Advanced incident prioritization and analytics.
+- Enhanced location tracking and geospatial filtering.
+- Notification mechanisms for critical incidents.
+- Additional monitoring and reporting capabilities.
+
+## Repository
+
+GitHub: https://github.com/Kalyandeep090/RescueChain
